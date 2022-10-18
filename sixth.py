@@ -124,7 +124,7 @@ if __name__ == "__main__":
    如果输入3次仍未找到，则结束查询；
    调用 find_luckguys() 函数，输出所有拥有QQ靓号的人的姓名
 '''
-
+'''
 def find_QQ(res_name,tes_dict):
     # 查找姓名对应的QQ
     # 返回 QQ
@@ -158,7 +158,6 @@ if __name__ == "__main__":
         test_name = input("输入需查询的姓名：")
         res = find_QQ(test_name,mes_dict)
         if res != None:
-            print("姓名存在")
             break
         else:
             print("查询姓名不存在，请重新查询")  
@@ -166,7 +165,17 @@ if __name__ == "__main__":
         print("查询三次仍不存在，结束查询")
 
     print(find_luckyguys(mes_dict))
-    
+'''
+
+# 6
+'''
+字符串有一个 isidentifier() 方法，功能是用来判断给定的字符串是否为合法的标识符，请自行实现此方法的相似功能，定义一个函数 isIdentifier() ，
+函数从 __main__ 模块中接收参数 s ，判断 s 是否为合法标识符，输出判断结果的信息：
+(1)若合法，则输出'Valid identifier.';
+(2)若首字母不合法，则输出'Error. First char must be alphas or number.';
+(3)若首字母合法而其他字符不合法，则输出'Error.Other chars must be alphas number or _.'
+'''
+
 
 
 
