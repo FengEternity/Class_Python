@@ -176,6 +176,7 @@ if __name__ == "__main__":
 (2)若首字母不合法，则输出'Error. First char must be alphas or number.';
 (3)若首字母合法而其他字符不合法，则输出'Error.Other chars must be alphas number or _.'
 '''
+# 题目的要求似乎并没有完全遵循 Python 命名规范
 '''
 pytohn 合法标识符命名规范：
     1. 标识符是由字符(A-Z和a-z)、下划线和数字组成，但第一个字符不能是数字；
@@ -183,10 +184,7 @@ pytohn 合法标识符命名规范：
     3. Python 标识符中，不能包含空格、@、% 以及 $ 等特殊字符
 '''
 
-
-from tkinter import E
-
-
+'''
 def isIdentifier(s):
 
     a = (ord(s[0]) >= ord("A") and ord(s[0]) <= ord("Z"))  # 判断首字符是否在 A-Z 之间
@@ -198,17 +196,99 @@ def isIdentifier(s):
             e = (ord(i) >= ord("A") and ord(i) <= ord("Z"))
             f = (ord(i) >= ord("a") and ord(i) <= ord("z"))
             g = (ord(i) >= 48 and ord(i) <= 57)
-            if e == True or f == True or g == True  or ord(i) == 95:
+            if e == True or f == True or g == True or ord(i) == 95:
                 continue
             print("Error.Other chars must be alphas number or _.")
             return False
     else:
         print("Error. First char must be alphas or number.")
         return False
-    
 
 
 if __name__ == "__main__":
-    s=input("输入待判断的标识符：")
+    s = input("输入待判断的标识符：")
     if isIdentifier(s) != False:
         print("Valid identifier.")
+'''
+
+# 7
+'''
+定义一个函数 count_str() 统计给定的字符串中各个单词出现的次数并将结果存入一个字典并返回，
+__main__模块中定义了一个字符串将它作为实参传入 count_str() 中进行统计，并分别按键和值的升序形式将返回的结果在屏幕上输出。
+测试数据：
+    str1 = "Python C++ Java Go Java PHP Python Java"
+'''
+
+'''
+def count_str(test_str):
+    test_list = test_str.split()
+    res_dict = {}
+    for i in test_list:
+        if i not in res_dict:
+            res_dict[i] = 1
+        else:
+            res_dict[i] += 1
+    sort_keys = dict(sorted(res_dict.items()))
+    sort_values = dict(sorted(res_dict.items(), key=lambda x: x[1]))
+    print("【 按键输出 】")
+    for i, j in sort_keys.items():
+        print(i, j)
+    print("【 按值顺序，值相同时按键顺序排序 】")
+    for i, j in sort_values.items():
+        print(i, j)
+
+
+if __name__ == "__main__":
+    str1 = "Python C++ Java Go Java PHP Python Java"
+    count_str(str1)
+'''
+
+# 8
+'''
+自定义函数 minNum(*args) 将传入的参数中的数字（均为个位数）组成一个最小的数并返回，
+要求首位不允许为0.输入几个数(可能不止一个0),调用 minNum() 函数获得组合成的最小数输出 
+'''
+
+
+# 9
+'''
+将一个正整数所有数字的平方相加可得到一个新的数，不断重复这个过程直到新的数已经在之前出现过，这样构成了一个数字链。
+
+例如：
+1->1
+89->145->42->20->4->16->37->58->89
+
+理论上证明了从任一整数开始，平方和数字链最终都会到达 1 或 89,因此寻找某正整数的平方和数字链到 1 或 89 即可。
+自定义函数 numsChain(num) , 寻找从 num  到 1 或 89 的平方和数字链中的所有数并将结果返回。
+主模块中从键盘输入一个数字字符串（正整数），调用 numsChain() 函数寻找并输出完整的平方和数字链。
+'''
+
+
+# 10
+'''
+自定义函数函数 twonumSum(n,lst), 在列表 lst 中查找是否有两数之和等于 n , 若有则返回两数的下标，否则返回 -1 。
+对于一个不包含重复数字的有序列表[1,4,5,6,7,8,9,10,11,12,13,15,18,19,20,21,29,34,54,65],
+从键盘上输入 n , 调用函数 twonumSum() 输出满足条件的两个数的索引（找到一组即可且要求其中的一个数尽量小），
+若所有数均不满足条件则输出"not found"
+'''
+
+# 11
+'''
+扑克牌除大王和小王外有 13 张不同牌面的牌：A、2、3、…、10、J、Q、K，
+如果大于或等于五张连续的牌在一起成为顺子，自定义函数 playCard(cards) 简易模拟判断已抓的牌（大于等于 5 张，牌面只包含2-9这8张牌）中是否包含顺子（假定牌的张数为5张）并将结果返回。
+__main__模块中输入一组扑克牌的牌面字符，调用 playCard() 函数，寻找并输出其中的顺子，找不到则输出对应的提示。
+'''
+
+
+# 12
+'''
+编写辗转相除法求最大公约数的递归函数。
+'''
+
+def gcd():
+    pass
+
+if __name__ == "__main__":
+    a, b=input("输入两个正整数（用','隔开）：").split(',')
+    print(a,b)
+    print(type(a))
