@@ -314,23 +314,44 @@ if __name__ == "__main__":
 从键盘上输入 n , 调用函数 twonumSum() 输出满足条件的两个数的索引（找到一组即可且要求其中的一个数尽量小），
 若所有数均不满足条件则输出"not found"
 '''
-import itertools
 
+'''
+def twonumSum(n, lst):
+    print(lst)
+    for element_1, i in enumerate(lst):
+        for element_2, j in enumerate(lst):
+            if i + j == n:
+                return element_1, element_2
 
-def twonumSum(n,lst):
-    for i ,j in 
 
 if __name__ == "__main__":
-    lst = [1,4,5,6,7,8,9,10,11,12,13,15,18,19,20,21,29,34,54,65]
+    lst = [1, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+           13, 15, 18, 19, 20, 21, 29, 34, 54, 65]
     n = int(input("测试数据n:"))
-    twonumSum(n,lst)
-
+    print(twonumSum(n, lst))
+'''
 # 11
 '''
 扑克牌除大王和小王外有 13 张不同牌面的牌：A、2、3、…、10、J、Q、K，
 如果大于或等于五张连续的牌在一起成为顺子，自定义函数 playCard(cards) 简易模拟判断已抓的牌（大于等于 5 张，牌面只包含2-9这8张牌）中是否包含顺子（假定牌的张数为5张）并将结果返回。
 __main__模块中输入一组扑克牌的牌面字符，调用 playCard() 函数，寻找并输出其中的顺子，找不到则输出对应的提示。
 '''
+
+def playCard(cards):
+    set_nums = set()
+    mi, ma = 14, 0
+    for num in cards:
+        if num == 0:continue
+        mi = min(num, mi)
+        ma = max(num, ma)
+        if num in set_nums:
+            return False
+        set_nums.add(num)
+
+    return ma - mi < 5
+
+print(playCard([0, 0, 1, 2, 4]))
+
 
 
 # 12
