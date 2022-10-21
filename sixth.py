@@ -248,8 +248,30 @@ if __name__ == "__main__":
 自定义函数 minNum(*args) 将传入的参数中的数字（均为个位数）组成一个最小的数并返回，
 要求首位不允许为0.输入几个数(可能不止一个0),调用 minNum() 函数获得组合成的最小数输出 
 '''
+'''
+from itertools import permutations
+def minNun(*args):
+    num_list = list(args)
+    res_0 = []
+    for i in permutations(num_list, len(num_list)):
+        res_list = list(i)
+        res_str = "".join('%s' % id for id in res_list)
+        res_0.append(res_str)
+
+    res = []
+    for i in res_0:
+        if i[0] == '0':
+            continue
+        else:
+            res.append(i)
+
+    print(min(res))
 
 
+if __name__ == "__main__":
+    minNun(0, 2, 3, 3, 4, 1, 2, 0, 0)
+
+'''
 # 9
 '''
 将一个正整数所有数字的平方相加可得到一个新的数，不断重复这个过程直到新的数已经在之前出现过，这样构成了一个数字链。
@@ -262,7 +284,28 @@ if __name__ == "__main__":
 自定义函数 numsChain(num) , 寻找从 num  到 1 或 89 的平方和数字链中的所有数并将结果返回。
 主模块中从键盘输入一个数字字符串（正整数），调用 numsChain() 函数寻找并输出完整的平方和数字链。
 '''
+'''
+# 待改进
+    1.最后输出时删去"->"
+    2.输入 89/1 不进入循环
 
+def numsChain(num):
+    res = 0
+    if num == 1 or num == 89:
+        return 0
+    else:   
+        for i in str(num):
+            res += (int(i)*int(i))
+        if res != 1 or i != 89: 
+            print(f"{res}->",end="")
+        else:
+            print(res)
+        return numsChain(res)
+    
+if __name__ == "__main__":
+    test_num = int(input("输入测试数值："))
+    numsChain(test_num)
+'''
 
 # 10
 '''
@@ -271,6 +314,16 @@ if __name__ == "__main__":
 从键盘上输入 n , 调用函数 twonumSum() 输出满足条件的两个数的索引（找到一组即可且要求其中的一个数尽量小），
 若所有数均不满足条件则输出"not found"
 '''
+import itertools
+
+
+def twonumSum(n,lst):
+    for i ,j in 
+
+if __name__ == "__main__":
+    lst = [1,4,5,6,7,8,9,10,11,12,13,15,18,19,20,21,29,34,54,65]
+    n = int(input("测试数据n:"))
+    twonumSum(n,lst)
 
 # 11
 '''
@@ -285,10 +338,18 @@ __main__模块中输入一组扑克牌的牌面字符，调用 playCard() 函数
 编写辗转相除法求最大公约数的递归函数。
 '''
 
-def gcd():
-    pass
+'''
+def gcd(a, b):
+    if b > a:
+        a, b = b, a
+
+    if a % b == 0:
+        return b
+    else:
+        return gcd(b, a % b)
+
 
 if __name__ == "__main__":
-    a, b=input("输入两个正整数（用','隔开）：").split(',')
-    print(a,b)
-    print(type(a))
+    a, b = input("输入两个正整数（用','隔开）：").split(',')
+    print(gcd(int(a), int(b)))
+'''
