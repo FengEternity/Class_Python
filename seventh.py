@@ -24,5 +24,24 @@ if __name__ == "__main__":
 '''
 
 # 2
+'''
+with open('date.txt','r+') as f:
+    lines = f.read().splitlines()  # 按行读取文件且忽略末尾换行
+    f.write("\n")
+    for line in lines:
+        reline = line[::-1]
+        f.write(f"{line}-{reline}\n")
+'''
+
+# 3
+with open('addressbook.txt','r+') as f:
+
+    test_str = input("输入需查询姓名:")
+    lines = f.read().splitlines()
+    print(lines)
+    if test_str in f:
+        print("Y")
+    else:
+        print("N")
 
 
