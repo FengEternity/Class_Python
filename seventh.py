@@ -34,14 +34,30 @@ with open('date.txt','r+') as f:
 '''
 
 # 3
-with open('addressbook.txt','r+') as f:
+'''
+def found(test_str):
+    with open('addressbook.txt','r+') as f:
+        for line in f.read().splitlines():
+            line = str(line)
+            if test_str in line:
+                print(line)
+                return True
 
-    test_str = input("输入需查询姓名:")
-    lines = f.read().splitlines()
-    print(lines)
-    if test_str in f:
-        print("Y")
-    else:
-        print("N")
+test_str = input("输入需查询姓名:")
+if found(test_str) == None:
+    print("Not found")
+'''
 
+
+# 4
+
+def RLE():
+    pass
+
+
+if __name__ == "__main__":
+    with open('file1.txt','r+') as f:
+        line = str(f.read())
+        # print(line)
+        
 
