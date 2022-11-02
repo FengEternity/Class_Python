@@ -50,14 +50,45 @@ if found(test_str) == None:
 
 
 # 4
+'''
+def RLE(line):
+    line_list = list(line)
+    count = 0
+    for i in range(len(line_list)-1):
+        # 将一个字符串分割成相同字符组成的字符串
 
-def RLE():
-    pass
+        if line[i] != line[i+1]:
+            count += 1
+            line_list.insert(i+count, '#')
+    res_list = ''.join(line_list).split('#')
+
+    for j in res_list:
+        print(f"{j[0]}{len(j)}", end='')
 
 
 if __name__ == "__main__":
-    with open('file1.txt','r+') as f:
+    with open('file1.txt', 'r+') as f:
         line = str(f.read())
-        # print(line)
-        
+        RLE(line)
+'''
 
+# 5
+'''
+strip():
+    用于移除字符串首尾指定的字符串，默认为空格和换行符
+'''
+'''
+with open('subtitles.srt','r+',encoding='utf-8') as f_read:
+    with open('7_4_result.txt','a+',encoding='utf-8') as f_write:
+        new = []
+        for line in f_read.readlines():
+            if line[0] not in list('\n0123456789') and line[-2] not in list('0123456789'):
+                new.append(line)
+        new = [ele.strip() for ele in new]
+
+        for line in new:
+            f_write.write(line+'\n')
+'''
+
+
+# 6

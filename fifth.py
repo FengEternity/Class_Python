@@ -25,7 +25,7 @@ for j in test:
         dict[j] = 1
     else:
         dict[j] += 1
-        
+
 res = dict_slice(dict,0,26)
 
 print(res.values())
@@ -41,11 +41,11 @@ print(res.values())
 x = int(input("请输入一个数："))
 print(x ,'= ',end=' ')
 
-temp = [] 
+temp = []
 while x!=1:
     for i in range(2,x+1):
         if x % i == 0:
-            temp.append(i) 
+            temp.append(i)
             x = x // i
             break
 
@@ -74,14 +74,14 @@ for i in range(0,1000):
 res = []
 for j in test:
     a = j//100 # 个位
-    b = j%100//10 # 十位 
+    b = j%100//10 # 十位
     c = j%100%10 # 百位
 
     res_1 = b*100 + c*10 + a
     res_2 = c*100 + a*10 + b
     res.append(res_1)
     res.append(res_2)
-    
+
 for k in res:
     if k < 100 or k > 999: # 判断左移后存在 0 的数字
         continue
@@ -112,7 +112,7 @@ if n[0] == n[1] and n[1] == n[2] and n[2] == n[3]:
     print(n[0]*4,'-',n[0]*4,'= 0000',end='')
 
 else:
-    while n!='6174':   
+    while n!='6174':
         a = sorted(n,reverse=True)
         b = sorted(n)
         a = a[0]+a[1]+a[2]+a[3]
