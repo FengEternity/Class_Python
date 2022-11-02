@@ -92,3 +92,17 @@ with open('subtitles.srt','r+',encoding='utf-8') as f_read:
 
 
 # 6
+with open('article.txt', 'r') as f:
+
+    for line in f.readlines():
+        word_list = []
+        for word in line.split():
+            word_list.append(word)
+
+        for i in range(len(word_list)):
+            for j in word_list[i]:
+                if j.isalpha()==False:
+                   i_list = list(word_list[i])
+                   i_list.pop()
+                   res = ''.join(i_list)
+                   print(res)
