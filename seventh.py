@@ -98,11 +98,11 @@ with open('article.txt', 'r') as f:
         word_list = []
         for word in line.split():
             word_list.append(word)
+        print(type(word_list))
 
-        for i in range(len(word_list)):
-            for j in word_list[i]:
-                if j.isalpha()==False:
-                   i_list = list(word_list[i])
-                   i_list.pop()
-                   res = ''.join(i_list)
-                   print(res)
+        '''
+        print(word_list)
+        for i in word_list:
+            for j in i:
+                print(j)
+        '''
