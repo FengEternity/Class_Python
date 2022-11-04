@@ -94,15 +94,24 @@ with open('subtitles.srt','r+',encoding='utf-8') as f_read:
 # 6
 with open('article.txt', 'r') as f:
 
-    for line in f.readlines():
-        word_list = []
-        for word in line.split():
-            word_list.append(word)
-        print(type(word_list))
 
-        '''
-        print(word_list)
-        for i in word_list:
-            for j in i:
-                print(j)
-        '''
+    article_str = f.read()
+    article_str = article_str.lower()
+    word_list = article_str.split()
+    res_list = []
+    for word in word_list:
+        for i in word:
+            if ord('a')<= ord(i)<=ord('z'):
+                continue
+            else:
+                word_list.pop(word)
+                res_word = word.replace(i,'')
+                res_list.append(res_word)
+    print(word_list)
+
+    '''
+    print(word_list)
+    for i in word_list:
+        for j in i:
+            print(j)
+    '''
