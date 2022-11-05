@@ -127,7 +127,7 @@ with open('article.txt', 'r') as f:
 
 # 7
 
-
+'''
 def find(digit):
     with open('date2.txt', 'r') as f:
         sum_list = []
@@ -154,3 +154,12 @@ if __name__ == "__main__":
     digit = int(input("輸入待查詢整數："))
     if find(digit) == None:
         print("輸入數字不滿足題意")
+'''
+
+# 8
+with open('Blowing in the wind.txt','r+') as f:
+    old = f.read()
+    f.seek(0)
+    f.write("Blowin'in the wind\nBob Dylan")
+    f.write(old)
+    f.write("1962 by Warner Bros. Inc.")
