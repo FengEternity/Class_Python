@@ -72,13 +72,17 @@ class Vehiclea:
 
     def insert_Veh(self, number, entry, brand, check):
         '车辆信息添加'
-        for x in self.info:
-            if number in x:
-                print("该车信息已添加至车管所")
-                return False
-        self.total += 1
-        self.info.append([number, entry, brand, check])
-        return True
+        with open('vehiclea.txt', 'a+') as f:
+
+            for x in self.info:
+                if number in x:
+                    print("该车信息已添加至车管所")
+                    return False
+            self.total += 1
+            self.info.append([number, entry, brand, check])
+            f.write(f"{number} {entry} {brand} {check}")
+            f.write("\n")
+            return True
 
     def del_Veh(self, number):
         '车辆信息删除'
@@ -117,6 +121,8 @@ class Vehiclea:
             year = (x[3])[:4]
             if year != '2022':
                 print(f"{x}本年度未年检")
+            if 2022 - int(year) >= 3:
+                self.del_Veh(x.number)
 
 
 if __name__ == '__main__':
@@ -124,8 +130,8 @@ if __name__ == '__main__':
     car.insert_Veh('12345', '2022/10/1', 'Audi', '2022/11/7')
     car.insert_Veh('12333', '2022/10/1', 'Cadillac', '2021/11/7')
     car.insert_Veh('12Y14', '2022/10/1', 'Lexus', '2020/11/7')
-    car.del_Veh('12333')
     car.search_Veh('12Y14')
     car.sear_check()
     car.sort_Veh()
+    print(f"车管所车辆总数为：{car.total}")
     car.print_Veh()
