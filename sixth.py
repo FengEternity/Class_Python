@@ -113,7 +113,6 @@ if __name__ == "__main__":
     clean_list(test_list)
 '''
 
-
 # 5
 '''
 有5个好朋友小明、阿花、大壮、大毛和小毛他们的QQ号分别是88888、5555555、11111、1234321和1212121，用字典将这些数据组织起来，实现如下程序功能;
@@ -337,11 +336,12 @@ if __name__ == "__main__":
 __main__模块中输入一组扑克牌的牌面字符，调用 playCard() 函数，寻找并输出其中的顺子，找不到则输出对应的提示。
 '''
 
+
 def playCard(cards):
     set_nums = set()
     mi, ma = 14, 0
     for num in cards:
-        if num == 0:continue
+        if num == 0: continue
         mi = min(num, mi)
         ma = max(num, ma)
         if num in set_nums:
@@ -350,9 +350,8 @@ def playCard(cards):
 
     return ma - mi < 5
 
+
 print(playCard([0, 0, 1, 2, 4]))
-
-
 
 # 12
 '''

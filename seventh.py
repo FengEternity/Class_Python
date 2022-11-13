@@ -48,7 +48,6 @@ if found(test_str) == None:
     print("Not found")
 '''
 
-
 # 4
 '''
 def RLE(line):
@@ -89,7 +88,6 @@ with open('subtitles.srt','r+',encoding='utf-8') as f_read:
         for line in new:
             f_write.write(line+'\n')
 '''
-
 
 # 6
 '''
@@ -157,7 +155,7 @@ if __name__ == "__main__":
 '''
 
 # 8
-with open('Blowing in the wind.txt','r+') as f:
+with open('Blowing in the wind.txt', 'r+') as f:
     old = f.read()
     f.seek(0)
     f.write("Blowin'in the wind\nBob Dylan")

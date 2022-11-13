@@ -31,7 +31,6 @@ res = dict_slice(dict,0,26)
 print(res.values())
 '''
 
-
 # 第 7 题
 '''
 题目：

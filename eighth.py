@@ -1,5 +1,5 @@
 # 1 and 2
-'''
+"""
 class BMI:
     '身体质量指数'
 
@@ -38,7 +38,7 @@ class ChinaBMI(BMI):
 if __name__ == '__main__':
     test = ChinaBMI(55, 1.68)
     test.printBMI()
-'''
+"""
 
 # 3
 '''
@@ -58,11 +58,12 @@ if __name__ == '__main__':
 
 '''
 
+
 # 4
 
 
 class Vehiclea:
-    '定义车辆类'
+    """定义车辆类"""
 
     def __init__(self, name_Dmv):
         '初始化车管所信息'
@@ -71,7 +72,7 @@ class Vehiclea:
         self.info = []
 
     def insert_Veh(self, number, entry, brand, check):
-        '车辆信息添加'
+        """车辆信息添加"""
         with open('vehiclea.txt', 'a+') as f:
 
             for x in self.info:
@@ -85,7 +86,7 @@ class Vehiclea:
             return True
 
     def del_Veh(self, number):
-        '车辆信息删除'
+        """车辆信息删除"""
         for x in self.info:
             if number in x:
                 print(f"车牌号为{number}的车辆删除成功")
@@ -96,7 +97,7 @@ class Vehiclea:
         return False
 
     def search_Veh(self, number):
-        '根据车牌号码查询信息'
+        """根据车牌号码查询信息"""
         for x in self.info:
             if number in x:
                 print(f"所查询车辆信息为：{x}")
@@ -105,15 +106,17 @@ class Vehiclea:
         return False
 
     def print_Veh(self):
-        '输出所有车辆信息'
+        """输出所有车辆信息"""
         print('该车管所车辆信息如下：')
         for x in self.info:
             print(x)
 
     def sort_Veh(self):
-        '根据车牌号从小到大排序'
+        """根据车牌号从小到大排序"""
+
         def takefirst(num):
             return num[0]
+
         self.info.sort(reverse=False, key=takefirst)
 
     def sear_check(self):
