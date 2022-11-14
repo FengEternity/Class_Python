@@ -44,7 +44,6 @@ except ValueError:
     print("ValueError")
 """
 
-
 # 2
 # test_list = [2, 3, 4, 1, 4, 4, 6]
 # while True:
@@ -110,17 +109,26 @@ except ValueError:
 #         break
 
 # 7
-def countLines(fname):
+import os
+
+
+def countLines(file_name):
     try:
-        with open(fname) as f:
+        with open(f'C:\\Users\\Monty _L\\Documents\\GitHub\\Class_Python\\ninth_7\\{file_name}', encoding='UTF-8') as f:
             date = f.readlines()
+
     except FileNotFoundError:
-        print(fname + " does not exist")
+        print(file_name + " does not exist")
+        print()
     else:
         lens = len(date)
-        print(fname + ' has ' + str(lens) + ' lines')
+        print(file_name + ' has ' + str(lens) + ' lines')
+        print()
 
 
 if __name__ == '__main__':
-    fname = 'date.txt'
-    countLines(fname)
+    file_path = r'C:\Users\Monty _L\Documents\GitHub\Class_Python\ninth_7'
+    files = os.listdir(file_path)
+    for file in files:
+        print(type(file))
+        countLines(file)
