@@ -81,14 +81,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+data_1 = pd.read_table(r'C:\Users\Monty _L\Documents\GitHub\Class_Python\ml-100k\u.data', encoding='utf8', header=None)
+data_2 = pd.read_table(r'C:\Users\Monty _L\Documents\GitHub\Class_Python\ml-100k\u.user', encoding='utf8', header=None)
 
-data_1  = pd.read_table(r'C:\Users\Monty _L\Documents\GitHub\Class_Python\ml-100k\u.data',encoding='utf8',header = None)
-data_2 = pd.read_table(r'C:\Users\Monty _L\Documents\GitHub\Class_Python\ml-100k\u.user',encoding='utf8',header = None)
-
-data_1.columns = ['id','item id','rating','timestamp']
+data_1.columns = ['id', 'item id', 'rating', 'timestamp']
 data_1
-data_2['id'],data_2['age'],data_2['gender'],data_2['occupation'],data_2['zip code'] = data_2[0].str.split('|').str
+data_2['id'], data_2['age'], data_2['gender'], data_2['occupation'], data_2['zip code'] = data_2[0].str.split('|').str
 
-data = pd.merge(data_1,data_2,on=['id'])
+data = pd.merge(data_1, data_2, on=['id'])
 
 data
